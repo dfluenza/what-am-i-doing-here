@@ -1,0 +1,7 @@
+﻿  stdafx.cpp
+  Lab5.cpp
+e:\c++\lab\lab5\lab5.cpp(48): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+e:\c++\lab\lab5\lab5.cpp(112): warning C4305: инициализация: усечение из "int" в "char"
+e:\c++\lab\lab5\lab5.cpp(112): warning C4309: инициализация: усечение константного значения
+e:\c++\lab\lab5\lab5.cpp(128): warning C4244: return: преобразование "double" в "int", возможна потеря данных
+  Lab5.vcxproj -> E:\C++\Lab\Debug\Lab5.exe
