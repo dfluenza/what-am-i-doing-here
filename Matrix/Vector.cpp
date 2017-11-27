@@ -39,6 +39,23 @@ void Vector::vectornoe_proizvedenie(int **& B1, int g1, int **& B2, int g2, int 
 		else { cout << "Idi uchi matan; mozhno umnozhat' tol'ko ravnye vectory" << endl; }
 	}
 }
+
+void Vector::matrix_na_vector(int **& A1, int l1, int l2, int **& B1, int g1, int **& B)
+{
+	if (l2 == g1)
+	{
+		for (int i = 0; i < l2; i++) { B[0][i] = 0; }
+		for (int i = 0; i < l2; i++)
+		{
+			for (int j = 0; j < g1; j++)
+			{
+				B[0][i] = B[0][i] + A1[i][j] * B1[0][j];
+			}
+		}
+	}
+	else { cout << "Idi uchi matan; mozhno umnozhat' matrix na vector tol'ko odinakovoi vysoty" << endl; }
+}
+
 Vector::Vector()
 {
 	cin >> g2;
