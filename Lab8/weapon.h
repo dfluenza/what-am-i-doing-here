@@ -44,4 +44,5 @@ public:
 	{
 		return;
 	}
+	double recoil; //сила отдачи;
 };
