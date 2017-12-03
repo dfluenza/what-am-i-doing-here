@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Matrix", "Matrix\Matrix.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab10", "Lab10\Lab10.vcxproj", "{39EE8499-9876-4BC6-9E0D-18926D682AF8}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Classes(HM)", "Classes(HM)\Classes(HM).vcxproj", "{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -163,6 +165,14 @@ Global
 		{39EE8499-9876-4BC6-9E0D-18926D682AF8}.Release|x64.Build.0 = Release|x64
 		{39EE8499-9876-4BC6-9E0D-18926D682AF8}.Release|x86.ActiveCfg = Release|Win32
 		{39EE8499-9876-4BC6-9E0D-18926D682AF8}.Release|x86.Build.0 = Release|Win32
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Debug|x64.ActiveCfg = Debug|x64
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Debug|x64.Build.0 = Debug|x64
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Debug|x86.Build.0 = Debug|Win32
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Release|x64.ActiveCfg = Release|x64
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Release|x64.Build.0 = Release|x64
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Release|x86.ActiveCfg = Release|Win32
+		{E2A5CAA6-A27A-45B8-9879-B4B0AE35C5BF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
