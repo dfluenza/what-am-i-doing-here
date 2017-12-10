@@ -32,16 +32,16 @@ void Matrixx::matrix_slozhenie(int **& A1, int l1, int l2, int **& A2, int l5, i
 	else { cout << "Idi uchi matan; mozhno skladyvat' matrixi tol'ko odinakovogo razmera" << endl; }
 }
 
-void Matrixx::matrix_umnozhenie(int **& A1, int l1, int l2, int **& A2, int l5, int l6, int **& A)
+void Matrixx::matrix_umnozhenie(int **& A, int **& A1, int l3, int l4, int **& A2, int l5, int l6)
 {
-	if (l1 == l6)
+	if ((l3 == l6)&&(l4 != 1)&&(l6 != 1))
 	{
-		for (int i = 0; i < l1; i++)
+		for (int i = 0; i < l3; i++)
 		{
-			for (int j = 0; j < l2; j++)
+			for (int j = 0; j < l4; j++)
 			{
 				A[i][j] = 0;
-				for (int k = 0; k < l2; k++)
+				for (int k = 0; k < l4; k++)
 					A[i][j] = A[i][j] + A1[i][k] * A2[k][j];
 			}
 		}
