@@ -65,6 +65,31 @@ void Matriza::slozhenie(Matriza obj1, Matriza obj2, Matriza obj3)
 	else { cout << "Idi uchi matan; mozhno skladyvat' matrixi tol'ko odinakovogo razmera"; }
 		
 	}
+void Matriza::vychitanie(Matriza obj1, Matriza obj2, Matriza obj3)
+{
+
+	int l3 = obj1.l1;
+	int l5 = obj2.l1;
+	int l4 = obj1.l2;
+	int l6 = obj2.l2;
+
+	if ((l3 == l5) && (l4 == l6))
+	{
+		int l1 = l3;
+		int l2 = l4;
+		for (int i = 0; i < l1; i++)
+		{
+			for (int j = 0; j < l2; j++)
+			{
+				obj3.A[i][j] = 0;
+
+				obj3.A[i][j] = obj1.A[i][j] - obj2.A[i][j];
+			}
+		}
+	}
+	else { cout << "Idi uchi matan; mozhno vychitat' matrixi tol'ko odinakovogo razmera"; }
+
+}
 void Matriza::vyvod(Matriza obj3)
 {
 	cout << endl;
