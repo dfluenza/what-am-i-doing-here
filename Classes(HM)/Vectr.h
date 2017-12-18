@@ -17,6 +17,6 @@ public:
 
 	void vectornoe_proizvedenie(Vectr B1, Vectr B2, Vectr B);
 
-	~Vectr();
+	//~Vectr();
 };
 

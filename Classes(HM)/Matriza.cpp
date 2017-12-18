@@ -5,13 +5,13 @@
 using namespace std;
 
 
-void Matriza::umnozhenie(Matriza obj1, Matriza obj2, Matriza obj3)
+void Matriza::umnozhenie(Matriza obj1, Matriza obj2, Matriza & obj3)
 {
 	int l3 = obj1.l1;
 	int l4 = obj1.l2;
 	int l5 = obj2.l1;
 	int l6 = obj2.l2;
-	int otvet;
+
 
 	if ((l3 == l6) && (l4 != 1) && (l6 != 1))
 	{
@@ -28,19 +28,21 @@ void Matriza::umnozhenie(Matriza obj1, Matriza obj2, Matriza obj3)
 		}
 	vyvod(obj3);
 }
+	
 	if ((l4 == 1) && (l6 == 1)) {
 		int g1 = l4;
 		int g2 = l6;
+		int otvet;
 		if (g1 == g2) {
-			/*int otvet = 0;*/
 			for (int i = 0; i < g1; i++) {
+				otvet = 0;
 				otvet = otvet + obj1.A[0][i] + obj2.A[0][i];
 			}
 		} cout << otvet << endl;
 	}
 	else { cout << "Idi uchi matan" << endl; }
 }
-void Matriza::slozhenie(Matriza obj1, Matriza obj2, Matriza obj3)
+void Matriza::slozhenie(Matriza obj1, Matriza obj2, Matriza & obj3)
 {
 
 	int l3 = obj1.l1;
@@ -65,7 +67,7 @@ void Matriza::slozhenie(Matriza obj1, Matriza obj2, Matriza obj3)
 	else { cout << "Idi uchi matan; mozhno skladyvat' matrixi tol'ko odinakovogo razmera"; }
 		
 	}
-void Matriza::vychitanie(Matriza obj1, Matriza obj2, Matriza obj3)
+void Matriza::vychitanie(Matriza obj1, Matriza obj2, Matriza & obj3)
 {
 
 	int l3 = obj1.l1;

@@ -22,11 +22,11 @@ void Vectr::vectornoe_proizvedenie(Vectr obj1, Vectr obj2, Vectr obj3) //векторн
 	}
 }
 
-Vectr::Vectr()
-{
-}
-
-
-Vectr::~Vectr()
-{
-}
+//Vectr::Vectr()
+//{
+//}
+//
+//
+//Vectr::~Vectr()
+//{
+//}
