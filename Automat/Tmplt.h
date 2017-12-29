@@ -5,7 +5,7 @@
 
 using namespace std;
 
-template <class MyClass> class Matriz
+template <typename T> class Matriz
 {
 public:
 	int ** A;
@@ -14,10 +14,10 @@ public:
 	Matriz();
 	Matriz(int l1, int l2);
 	Matriz(int **A, int l3, int l4);
-	Matriz umnozhenie(Matriza obj1, Matriza obj2);
-	Matriz slozhenie(Matriza obj1, Matriza obj2);
-	Matriz vychitanie(Matriza obj1, Matriza obj2);
-	void vyvod(Matriza obj3);
+	Matriz umnozhenie(Matriz <T> obj1, Matriz <T> obj2);
+	Matriz slozhenie(Matriz <T> obj1, Matriz <T> obj2);
+	Matriz vychitanie(Matriz <T> obj1, Matriz <T> obj2);
+	void vyvod(Matriz <T> obj3);
 
 private:
 	int l1;
@@ -25,7 +25,7 @@ private:
 
 };
 
-template <class MyClass> Matriz::Matriz()
+template <typename T> Matriz::Matriz()
 {
 	cout << "enter matrix length ";
 	cin >> l1;
@@ -47,7 +47,7 @@ template <class MyClass> Matriz::Matriz()
 		}
 	}
 }
-template <class MyClass> Matriz::Matriz(int ll1, int ll2)
+template <typename T> Matriz::Matriz(int ll1, int ll2)
 {
 	l1 = ll1;
 	l2 = ll2;
@@ -65,7 +65,7 @@ template <class MyClass> Matriz::Matriz(int ll1, int ll2)
 		}
 	}
 }
-template <class MyClass> Matriz::Matriz(int **A1, int l3, int l4)
+template <typename T> Matriz::Matriz(int **A1, int l3, int l4)
 {
 	l3 = l1;
 	ll1 = l1;
@@ -86,11 +86,12 @@ template <class MyClass> Matriz::Matriz(int **A1, int l3, int l4)
 	}
 }
 
-template <class MyClass> Matriz::~Matriz()
+template <typename T> Matriz::~Matriz()
 {
 }
 
-template <class MyClass> Matriz::umnozhenie(Matriz obj1, Matriz obj2)
+template <typename T>
+Matriz::umnozhenie(Matriz <T> obj1, Matriz <T> obj2)
 {
 	int l3 = obj1.l1;
 	int l4 = obj1.l2;
@@ -183,4 +184,38 @@ template <class MyClass> Matriz::vyvod(Matriza obj3)
 		cout << std::endl;
 	}
 	cout << std::endl;
+}
+
+template <typename T> 
+Matriz <T> operator + (Matriz lhs,
+	Matriz rhs)
+{
+	Matriz result(1, 1);
+	return result.slozhenie(lhs, rhs);
+}
+
+template <typename T>
+Matriz <T> operator - (Matriz lhs,
+	Matriz rhs)
+{
+	Matriz result(1, 1);
+
+	return result.vychitanie(lhs, rhs);
+
+}
+template <typename T>
+Matriz <T> operator * (Matriz <T> lhs,
+	Matriz rhs)
+{
+	Matriz result(1, 1);
+
+	return result.umnozhenie(lhs, rhs);
+}
+
+template <typename T>
+Matriz <T> ostream & operator << (ostream & os,
+	Matriz <T> & rhs)
+{
+	rhs.vyvod(rhs);
+	return os;
 }
