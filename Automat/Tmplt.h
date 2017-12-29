@@ -5,27 +5,29 @@
 
 using namespace std;
 
-template <typename T> class Matriz
+template <class T> class Matriz
 {
 public:
 	int ** A;
 	int ll1;
 	int ll2;
+	~Matriz();
 	Matriz();
-	Matriz(int l1, int l2);
-	Matriz(int **A, int l3, int l4);
-	Matriz umnozhenie(Matriz <T> obj1, Matriz <T> obj2);
-	Matriz slozhenie(Matriz <T> obj1, Matriz <T> obj2);
-	Matriz vychitanie(Matriz <T> obj1, Matriz <T> obj2);
+	Matriz(T l1, T l2);
+	Matriz(T **A, T l3, T l4);
+	void umnozhenie(Matriz <T> obj1, Matriz <T> obj2);
+	void slozhenie(Matriz <T> obj1, Matriz <T> obj2);
+	void vychitanie(Matriz <T> obj1, Matriz <T> obj2);
 	void vyvod(Matriz <T> obj3);
-
+	friend ostream &operator<< (ostream &os, const Matriz<T> &rhs);
 private:
 	int l1;
 	int l2;
 
 };
 
-template <typename T> Matriz::Matriz()
+template <typename T>
+Matriz<T>::Matriz()
 {
 	cout << "enter matrix length ";
 	cin >> l1;
@@ -47,7 +49,8 @@ template <typename T> Matriz::Matriz()
 		}
 	}
 }
-template <typename T> Matriz::Matriz(int ll1, int ll2)
+template <typename T>
+Matriz<T>::Matriz(T ll1, T ll2)
 {
 	l1 = ll1;
 	l2 = ll2;
@@ -65,7 +68,8 @@ template <typename T> Matriz::Matriz(int ll1, int ll2)
 		}
 	}
 }
-template <typename T> Matriz::Matriz(int **A1, int l3, int l4)
+template <typename T> 
+Matriz<T>::Matriz(T **A1, T l3, T l4)
 {
 	l3 = l1;
 	ll1 = l1;
@@ -86,12 +90,13 @@ template <typename T> Matriz::Matriz(int **A1, int l3, int l4)
 	}
 }
 
-template <typename T> Matriz::~Matriz()
+template <typename T> 
+Matriz<T>::~Matriz()
 {
 }
 
 template <typename T>
-Matriz::umnozhenie(Matriz <T> obj1, Matriz <T> obj2)
+void Matriz<T>::umnozhenie(Matriz <T> obj1, Matriz <T> obj2)
 {
 	int l3 = obj1.l1;
 	int l4 = obj1.l2;
@@ -117,7 +122,8 @@ Matriz::umnozhenie(Matriz <T> obj1, Matriz <T> obj2)
 	}
 	else { cout << "Idi uchi matan" << endl; }
 }
-template <class MyClass> Matriz::slozhenie(Matriz obj1, Matriz obj2)
+template <typename T> 
+void Matriz<T>::slozhenie(Matriz <T> obj1, Matriz <T> obj2)
 {
 
 	int l3 = obj1.l1;
@@ -144,7 +150,8 @@ template <class MyClass> Matriz::slozhenie(Matriz obj1, Matriz obj2)
 	else { cout << "Idi uchi matan"; }
 
 }
-template <class MyClass> Matriz::vychitanie(Matriz obj1, Matriz obj2)
+template <typename T> 
+void Matriz<T>::vychitanie(Matriz<T>  obj1, Matriz <T> obj2)
 {
 	Matriz otvet(obj1.l1, obj1.l2);
 	int l3 = obj1.l1;
@@ -170,7 +177,8 @@ template <class MyClass> Matriz::vychitanie(Matriz obj1, Matriz obj2)
 	else { cout << "Idi uchi matan; mozhno vychitat' matrixi tol'ko odinakovogo razmera"; }
 
 }
-template <class MyClass> Matriz::vyvod(Matriza obj3)
+template <typename T> 
+void Matriz<T>::vyvod(Matriz <T> obj3)
 {
 	cout << endl;
 	cout << endl;
@@ -187,35 +195,41 @@ template <class MyClass> Matriz::vyvod(Matriza obj3)
 }
 
 template <typename T> 
-Matriz <T> operator + (Matriz lhs,
-	Matriz rhs)
+Matriz <T> operator + (Matriz <T> lhs,
+	Matriz <T> rhs)
 {
-	Matriz result(1, 1);
-	return result.slozhenie(lhs, rhs);
+	Matriz <T> result(1, 1);
+	return result.slozhenie(lhs, rhs );
 }
 
 template <typename T>
-Matriz <T> operator - (Matriz lhs,
-	Matriz rhs)
+Matriz <T> operator - (Matriz <T> lhs,
+	Matriz <T> rhs)
 {
-	Matriz result(1, 1);
+	Matriz <T> result(1, 1);
 
 	return result.vychitanie(lhs, rhs);
 
 }
 template <typename T>
 Matriz <T> operator * (Matriz <T> lhs,
-	Matriz rhs)
+	Matriz <T> rhs)
 {
-	Matriz result(1, 1);
+	Matriz <T> result(1, 1);
 
-	return result.umnozhenie(lhs, rhs);
+	return result.umnozhenie (lhs, rhs);
 }
-
 template <typename T>
-Matriz <T> ostream & operator << (ostream & os,
-	Matriz <T> & rhs)
+ostream &operator<<(ostream &os, const Matriz<T>& rhs)
 {
-	rhs.vyvod(rhs);
+	rhs.vyvod;
 	return os;
 }
+
+//template <typename T>
+//friend ostream& operator << (ostream & os,
+//	Matriz <T> & rhs)
+//{
+//	rhs.vyvod(rhs);
+//	return os;
+//}
