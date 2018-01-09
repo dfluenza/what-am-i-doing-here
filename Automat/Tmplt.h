@@ -22,9 +22,9 @@ public:
 	template <typename T>friend ostream &operator<< (ostream &os, const Matriz<T> &rhs);
 
 
-	T* operator[](int elem)
+	T* operator[](int i)
 	{
-		return A[elem];
+		return A[i];
 	}
 
 private:
@@ -38,10 +38,10 @@ private:
 template <typename T>
 Matriz<T>::Matriz()
 {
-	cout << "enter matrix length ";
+	cout << "matrix length: ";
 	cin >> l1;
 	ll1 = l1;
-	cout << "enter matrix height ";
+	cout << "matrix height: ";
 	cin >> l2;
 	ll2 = l2;
 	A = new T *[l1];
@@ -198,9 +198,11 @@ Matriz <T> operator + (Matriz <T> lhs,
 		return result;
 	}
 	else {
-		Matriz <T> result(1, 1);
-		return result;
+		Matriz <T> res(0, 0);
+		return res;
+		cout << "The operation can't be performed" << endl;
 	}
+
 }
 
 template <typename T>
@@ -214,10 +216,12 @@ Matriz <T> operator - (Matriz <T> lhs,
 		result.vychitanie(lhs, rhs, result);
 		return result;
 	}
-		else {
-			Matriz <T> result(1, 1);
-			return result;
-		}
+	else {
+		Matriz <T> res(0, 0);
+		return res;
+		cout << "The operation can't be performed" << endl;
+	}
+	
 		}
 
 	template <typename T>
@@ -231,8 +235,9 @@ Matriz <T> operator - (Matriz <T> lhs,
 			return result;
 		}
 		else {
-			Matriz <T> result(1, 1);
-			return result;
+			Matriz <T> res(0, 0);
+			return res;
+			cout << "The operation can't be performed" << endl;
 		}
 	}
 
@@ -267,7 +272,7 @@ Vector<T>::~Vector()
 template <typename T>
 Vector<T>::Vector()
 {
-	cout << "enter vector length ";
+	cout << "vector length: ";
 	cin >> l2;
 	Vect = new T *[1];
 	for (int i = 0; i <1; i++)
